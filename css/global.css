@@ -2,7 +2,9 @@ body {
 	color: #333;
 	background: fixed url(../pic/bg.jpg) no-repeat;
 	font: 16px/28px Helios, "Helvetica Neue", Arial, sans-serif;
+
 	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 @media screen and (min-width: 1500px) {
@@ -38,7 +40,6 @@ a:hover {
 p { margin-bottom: 8px; }
 small { font-size: 11px; }
 abbr { border-bottom: 1px dotted; }
-.date { font: 16px/32px Helios, "Helvetica Neue", Arial, sans-serif; margin-bottom: 16px; color: gray; }
 
 #menu {
 	width: 1000px;
@@ -95,10 +96,7 @@ abbr { border-bottom: 1px dotted; }
 	padding: 24px;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, .8);
-
 	border-radius: 12px;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
 }
 
 #content.index {
@@ -117,75 +115,14 @@ abbr { border-bottom: 1px dotted; }
 
 #content img {
 	margin: 6px 0;
-
 	border-radius: 12px;
-	-moz-border-radius: 12px;
-	-webkit-border-radius: 12px;
-
 	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
-
-#content h1 span.cats { color: gray; }
-#content h1 span.cats a { color: gray; }
 
 #indexText {
 	margin-left: 530px;
 	padding: 18px;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, .5);
-
 	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
 }
-
-#content div.post { margin-bottom: 24px; }
-#content div.post h1 { margin-bottom: 0; }
-#content div.post h2 { font: 20px/32px Helios, "Helvetica Neue", Arial, sans-serif; }
-#content div.post div.date a { color: gray; }
-#content div.post h2 a { font: inherit; }
-#content div.post h2 span.cats { color: gray; }
-#content div.post h2 span.cats a { color: gray; }
-
-#content blockquote {
-	font-style: italic;
-	background: url(/pic/blockquote.png);
-	border-left: 2px solid #FF5522;
-	border-right: 2px solid #FF5522;
-	padding: 6px 16px;
-	font-size: 1.3em;
-	line-height: 1.3em;
-}
-
-#content blockquote p.author { color: #666; margin-top: 4px; }
-
-#content div.post ul li, #content div.post ol li { padding: 4px 0; }
-
-#content div.floatLeft.years {
-	clear: both;
-	width: 120px;
-	font-size: 40px;
-	line-height: 50px;
-	color: gray;
-}
-
-#content div.post-link {
-	margin-left: 120px;
-	margin-bottom: 16px;
-}
-
-#content div.post-link a {
-	font-size: 18px;
-	line-height: 28px;
-}
-
-#content div.post-link a.date {
-	color: gray;
-	margin-right: 6px;
-}
-
-#pages { margin: 36px 0 0; }
-#pages a, #pages span { text-decoration: none; margin-right: 2px; padding: 2px; }
-#pages span.active { font-weight: bold; font-size: 15px; }
