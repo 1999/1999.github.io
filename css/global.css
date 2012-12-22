@@ -1,0 +1,191 @@
+body {
+	color: #333;
+	background: fixed url(../pic/bg.jpg) no-repeat;
+	font: 16px/28px Helios, "Helvetica Neue", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 1500px) {
+	body {
+		background: fixed url(../pic/bg-hires.jpg) no-repeat;
+	}
+}
+
+a, a:visited {
+	color: #ff5522;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* общие стили для сайта */
+.alignCenter { text-align: center; }
+.alignLeft { text-align: left; }
+.alignRight { text-align: right; }
+.alignJustify { text-align: justify; }
+.book { text-indent: 28px; }
+.floatLeft { float: left; }
+.floatRight { float: right; }
+.nwrap, .nowrap { white-space: nowrap; }
+.strong { font-weight: bold; }
+.block { display: block; }
+.inline { display: inline; }
+.hidden { display: none; }
+.clear { clear: both; line-height: 0; height: 0; }
+
+p { margin-bottom: 8px; }
+small { font-size: 11px; }
+abbr { border-bottom: 1px dotted; }
+.date { font: 16px/32px Helios, "Helvetica Neue", Arial, sans-serif; margin-bottom: 16px; color: gray; }
+
+#menu {
+	width: 1000px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0 24px;
+	box-sizing: border-box;
+}
+
+#menu div.left {
+	float: left;
+}
+
+#menu div.left h1 a {
+	font: bold 32px/48px Helios, "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	color: #333;
+}
+
+#menu div.left h2 span {
+	margin-right: 6px;
+	background: rgba(255, 255, 255, .65);
+	padding: 2px 4px;
+}
+
+#menu div.right ul {
+	list-style: none;
+	float: right;
+}
+
+#menu div.right ul li {
+	display: inline;
+}
+
+#menu div.right ul li a {
+	font: bold 20px/60px Helios, "Helvetica Neue", Arial, sans-serif;
+	margin: 0 2px;
+	padding: 4px 8px;
+	text-decoration: none;
+}
+
+#menu div.right ul li a.active {
+	border-bottom: 2px solid;
+}
+
+#menu div.right ul li a:hover {
+	background: #ff5522;
+	color: white;
+}
+
+#content {
+	width: 1000px;
+	margin: 0 auto 24px;
+	padding: 24px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, .8);
+
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+}
+
+#content.index {
+	background: none;
+}
+
+#content h1 {
+	font: 20px/32px Helios, "Helvetica Neue", Arial, sans-serif;
+	color: #ff5522;
+	margin-bottom: 12px;
+}
+
+#content ul, #content ol {
+	margin-left: 16px;
+}
+
+#content img {
+	margin: 6px 0;
+
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+
+	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+#content h1 span.cats { color: gray; }
+#content h1 span.cats a { color: gray; }
+
+#indexText {
+	margin-left: 530px;
+	padding: 18px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, .5);
+
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+#content div.post { margin-bottom: 24px; }
+#content div.post h1 { margin-bottom: 0; }
+#content div.post h2 { font: 20px/32px Helios, "Helvetica Neue", Arial, sans-serif; }
+#content div.post div.date a { color: gray; }
+#content div.post h2 a { font: inherit; }
+#content div.post h2 span.cats { color: gray; }
+#content div.post h2 span.cats a { color: gray; }
+
+#content blockquote {
+	font-style: italic;
+	background: url(/pic/blockquote.png);
+	border-left: 2px solid #FF5522;
+	border-right: 2px solid #FF5522;
+	padding: 6px 16px;
+	font-size: 1.3em;
+	line-height: 1.3em;
+}
+
+#content blockquote p.author { color: #666; margin-top: 4px; }
+
+#content div.post ul li, #content div.post ol li { padding: 4px 0; }
+
+#content div.floatLeft.years {
+	clear: both;
+	width: 120px;
+	font-size: 40px;
+	line-height: 50px;
+	color: gray;
+}
+
+#content div.post-link {
+	margin-left: 120px;
+	margin-bottom: 16px;
+}
+
+#content div.post-link a {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+#content div.post-link a.date {
+	color: gray;
+	margin-right: 6px;
+}
+
+#pages { margin: 36px 0 0; }
+#pages a, #pages span { text-decoration: none; margin-right: 2px; padding: 2px; }
+#pages span.active { font-weight: bold; font-size: 15px; }
