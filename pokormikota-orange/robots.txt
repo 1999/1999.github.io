@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /users
-Disallow: /shop/cart
-Host: pokormikota.ru
-Sitemap: http://pokormikota.ru/sitemap.xml
