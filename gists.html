@@ -2,63 +2,89 @@
 <html> 
 <head> 
   <meta charset="utf-8">
-	<meta http-equiv="Content-Language" content="ru">
+    <meta http-equiv="Content-Language" content="ru">
 
-	<!-- Yandex.Webmaster --> 
-	<meta name="yandex-verification" content="57f17e7bf30ae302">
-	<meta name="google-site-verification" content="GVsiZ9qJDbvsgZUJhz6LHu7Yg39w96Fsc_Sz3vU2BA0">
+    <!-- Yandex.Webmaster --> 
+    <meta name="yandex-verification" content="57f17e7bf30ae302">
+    <meta name="google-site-verification" content="GVsiZ9qJDbvsgZUJhz6LHu7Yg39w96Fsc_Sz3vU2BA0">
 
-	<link rel="stylesheet" href="./css/reset.css" media="all">
-	<link rel="stylesheet" href="./css/global.css" media="all">
-	
-	<!-- OpenID --> 
-	<link rel="openid.server" href="http://openid.yandex.ru/server/">
-	<link rel="openid2.provider" href="http://openid.yandex.ru/server/">
-	<link rel="openid.delegate" href="http://openid.yandex.ru/dmitry-sorin/">
-	<link rel="openid2.local_id" href="http://openid.yandex.ru/dmitry-sorin/">
+    <link rel="stylesheet" href="./css/reset.css" media="all">
+    <link rel="stylesheet" href="./css/global.css" media="all">
+    
+    <!-- OpenID --> 
+    <link rel="openid.server" href="http://openid.yandex.ru/server/">
+    <link rel="openid2.provider" href="http://openid.yandex.ru/server/">
+    <link rel="openid.delegate" href="http://openid.yandex.ru/dmitry-sorin/">
+    <link rel="openid2.local_id" href="http://openid.yandex.ru/dmitry-sorin/">
 
-	<!-- pAvatar -->
-	<link rel="pavatar" href="http://www.staypositive.ru/pic/pavatar.png">
-	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <!-- pAvatar -->
+    <link rel="pavatar" href="http://www.staypositive.ru/pic/pavatar.png">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
-	<title>Gists app for github</title>
-	<script type="text/javascript">
-	window.onload = function () {
-		var gistsArea = document.querySelector("#gists");
-		var clientId = "d7069920699909265b05";
-	
-		if (!window.sessionStorage)
-			return gistsArea.innerHTML = "Your browser doesn't support session storage API.";
-		
-		if (!sessionStorage.token)
-			return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
-			
-		console.log(window.location)
-	}		
-	</script>
+    <title>Gists app for github</title>
+    <script type="text/javascript">
+    window.onload = function () {
+        var gistsArea = document.querySelector("#gists");
+        var clientId = "d7069920699909265b05";
+        var secret = "9f046115f10fb7cdc8b7da4a924a826c86332d60";
+
+        var parseQuery = function () {
+            var args = location.search.substring(1).split('&');
+            var argsParsed = {};
+            var sprtPos;
+
+            for (var i = 0; i < args.length; i++) {
+                args[i] = decodeURI(args[i]).trim();
+                sprtPos = args[i].indexOf("=");
+
+                if (sprtPos === -1) {
+                    argsParsed[args[i]] = true;
+                } else {
+                    argsParsed[args[i].substr(0, sprtPos)] = args[i].substr(sprtPos + 1);
+                }
+            }
+
+            return argsParsed;
+        };
+    
+        if (!window.sessionStorage)
+            return gistsArea.innerHTML = "Your browser doesn't support session storage API.";
+        
+        if (!sessionStorage.token)
+            return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
+
+        var query = parseQuery();
+        if (query.code) {
+            location.href = "https://github.com/login/oauth/access_token?client_id=" + clientId + "&client_secret=" + secret + "&code=" + query.code;
+            return;
+        }
+            
+        console.log(window.location)
+    }       
+    </script>
 </head>
 <body>
 
 <div id="menu">
-	<div class="right"> 
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/daystoryapp">OMD</a></li>
-			<li><a href="/sigurros">Dauðalogn</a></li>
-			<li><a href="/vkofflineapp-promo">VK Offline</a></li>
-			<li><a class="active" href="/gists">Gists</a></li>
-			<li><a href="http://twitter.com/stay_positive">Twitter</a></li>
-		</ul> 
-	</div>
-	<div class="left"> 
-		<h1><a href="/">Dmitry Sorin</a></h1>
-		<h2><span>jsdev</span><span>post-hardcore</span><span>yandex</span></h2>
-	</div> 
+    <div class="right"> 
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/daystoryapp">OMD</a></li>
+            <li><a href="/sigurros">Dauðalogn</a></li>
+            <li><a href="/vkofflineapp-promo">VK Offline</a></li>
+            <li><a class="active" href="/gists">Gists</a></li>
+            <li><a href="http://twitter.com/stay_positive">Twitter</a></li>
+        </ul> 
+    </div>
+    <div class="left"> 
+        <h1><a href="/">Dmitry Sorin</a></h1>
+        <h2><span>jsdev</span><span>post-hardcore</span><span>yandex</span></h2>
+    </div> 
 </div>
 
 <div id="content">
-	<h1>Gists app for firhub</h1>
-	<div id="gists"></div>
+    <h1>Gists app for firhub</h1>
+    <div id="gists"></div>
 </div>
 
 <script type="text/javascript">
