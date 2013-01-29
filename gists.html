@@ -58,26 +58,42 @@
 
         if (query.code) {
             var cli = 'curl -i https://github.com/login/oauth/access_token -H "Origin: http://staypositive.ru" -H "Accept: application/json" --data "client_id=d7069920699909265b05&client_secret=9f046115f10fb7cdc8b7da4a924a826c86332d60&code=' + query.code + '"';
-
             console.log(cli);
-            // $.ajax({
-            //     type: "POST",
-            //     url: "https://github.com/login/oauth/access_token",
-            //     data: {
-            //         client_id: clientId,
-            //         client_secret: secret,
-            //         code: query.code
-            //     },
-            //     success: function (json) {
-            //         console.log(json);
-            //     },
-            //     crossDomain: true,
-            //     dataType: "json",
-            //     xhrFields: {
-            //         withCredentials: true
-            //     }
-            // });
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://github.com/login/oauth/access_token", true);
+
+            xhr.onreadystatechange = function () {
+                console.log([xhr.readyState, xhr.status, xhr.responseText]);
+            };
+
+            var data = new FormData;
+            data.append("client_id", clientId);
+            data.append("client_secret", secret);
+            data.append("code", query.code);
+            xhr.send(data);
+
+            $.ajax({
+                type: "POST",
+                url: "https://github.com/login/oauth/access_token",
+                data: {
+                    client_id: clientId,
+                    client_secret: secret,
+                    code: query.code
+                },
+                success: function (json) {
+                    console.log(json);
+                },
+                crossDomain: true,
+                contentType: "application/json",
+                xhrFields: {
+                    withCredentials: true
+                }
+            });
         }
+
+        // /gists
+        // http://developer.github.com/v3/gists/#response
 
         // console.log(window.location)
     });    
