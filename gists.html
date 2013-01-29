@@ -23,15 +23,18 @@
 
 	<title>Gists app for github</title>
 	<script type="text/javascript">
-	var gistsArea = document.querySelector("#gists");
-	var clientId = "d7069920699909265b05";
+	(function () {
+		var gistsArea = document.querySelector("#gists");
+		var clientId = "d7069920699909265b05";
 	
-	if (!window.sessionStorage)
-		return gistsArea.innerHTML = "Your browser doesn't support session storage API.";
+		if (!window.sessionStorage)
+			return gistsArea.innerHTML = "Your browser doesn't support session storage API.";
 		
-	if (!sessionStorage.token)
-		return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
-				
+		if (!sessionStorage.token)
+			return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
+			
+		console.log(window.location)
+	})();			
 	</script>
 </head>
 <body>
