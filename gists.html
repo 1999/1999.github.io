@@ -57,10 +57,13 @@
             return gistsArea.html("<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>");
 
         if (query.code) {
-            var client = $("<input name='client_id'>").val(clientId);
-            var secret = $("<input name='client_secret'>").val(secret);
-            var code = $("<input name='code'>").val(query.code);
-            $("<form action='https://github.com/login/oauth/access_token' method='post'>").append(client, secret, code).submit();
+            $.post("https://github.com/login/oauth/access_token", {
+                client_id: clientId,
+                client_secret: secret,
+                code: query.code
+            }, function (json) {
+                console.log(json);
+            });
         }
 
         // console.log(window.location)
