@@ -107,17 +107,18 @@ $(document).ready(function() {
 
 	$(document).on("click", "#content button.green", function() {
 		var self = $(this);
-
-		if (window.chrome === undefined || window.chrome.webstore === undefined) {
-			alert("Приложение устанавливается только в браузеры на базе Chromium. Установите Google Chrome, чтобы использовать VK Offline.");
-		} else {
+		
+		try {
 			self.html("Подождите...");
 
-			chrome.webstore.install(undefined, function() {
+			chrome.webstore.install(undefined, function () {
                                 self.html("Установить сейчас");
-                        }, function() {
+                        }, function () {
                                 self.html("Установить сейчас")
                         });
+		} catch (e) {
+			alert("Приложение устанавливается только в браузеры на базе Chromium. Установите Google Chrome, чтобы использовать VK Offline.");
+			self.html("Установить сейчас")
 		}
 	});
 
