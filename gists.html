@@ -62,6 +62,7 @@
 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "https://github.com/login/oauth/access_token", true);
+            xhr.withCredentials = true;
 
             xhr.onreadystatechange = function () {
                 console.log([xhr.readyState, xhr.status, xhr.responseText]);
