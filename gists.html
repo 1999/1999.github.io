@@ -49,17 +49,14 @@
     
         if (!window.sessionStorage)
             return gistsArea.innerHTML = "Your browser doesn't support session storage API.";
-        
-        if (!sessionStorage.token)
-            return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
 
         var query = parseQuery();
-        console.log(query);
-        if (query.code) {
-            location.href = "https://github.com/login/oauth/access_token?client_id=" + clientId + "&client_secret=" + secret + "&code=" + query.code;
-            return;
-        }
-            
+        if (!sessionStorage.token && !query.code)
+            return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
+
+        if (query.code)
+            return location.href = "https://github.com/login/oauth/access_token?client_id=" + clientId + "&client_secret=" + secret + "&code=" + query.code;
+
         console.log(window.location)
     }       
     </script>
