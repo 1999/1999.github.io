@@ -57,7 +57,7 @@
             return gistsArea.html("<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>");
 
         if (query.code) {
-            var cli = 'curl -i https://github.com/login/oauth/access_token -H "Origin: http://staypositive.ru" -H "Accept: application/json" --data "client_id=d7069920699909265b05&client_secret=9f046115f10fb7cdc8b7da4a924a826c86332d60&code="' + query.code;
+            var cli = 'curl -i https://github.com/login/oauth/access_token -H "Origin: http://staypositive.ru" -H "Accept: application/json" --data "client_id=d7069920699909265b05&client_secret=9f046115f10fb7cdc8b7da4a924a826c86332d60&code=' + query.code + '"';
 
             console.log(cli);
             // $.ajax({
