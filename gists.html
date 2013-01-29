@@ -22,9 +22,11 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
     <title>Gists app for github</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-    window.onload = function () {
-        var gistsArea = document.querySelector("#gists");
+    $(document).ready(function () {
+        var gistsArea = $("#gists");
         var clientId = "d7069920699909265b05";
         var secret = "9f046115f10fb7cdc8b7da4a924a826c86332d60";
 
@@ -48,17 +50,21 @@
         };
     
         if (!window.sessionStorage)
-            return gistsArea.innerHTML = "Your browser doesn't support session storage API.";
+            return gistsArea.html("Your browser doesn't support session storage API.");
 
         var query = parseQuery();
         if (!sessionStorage.token && !query.code)
-            return gistsArea.innerHTML = "<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>";
+            return gistsArea.html("<a href='https://github.com/login/oauth/authorize?client_id=" + clientId + "&scope=gist'>Provide access to github API via OAuth</a>");
 
-        if (query.code)
-            return location.href = "https://github.com/login/oauth/access_token?client_id=" + clientId + "&client_secret=" + secret + "&code=" + query.code;
+        if (query.code) {
+            var client = $("<input name='client_id'>").val(clientId);
+            var secret = $("<input name='client_secret'>").val(secret);
+            var code = $("<input name='code'>").val(query.code);
+            $("<form action='https://github.com/login/oauth/access_token' method='post'>").append(client, secret, code).submit();
+        }
 
-        console.log(window.location)
-    }       
+        // console.log(window.location)
+    });    
     </script>
 </head>
 <body>
