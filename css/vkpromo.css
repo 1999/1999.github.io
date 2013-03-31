@@ -96,7 +96,7 @@
 	color: #333;
 }
 
-#content div.data img, #content div.data iframe {
+#content div.data img, #content div.data iframe.promo {
 	float: right;
 	margin: 0 0 24px 36px;
 	box-shadow: 0 0 16px rgba(0, 0, 0, .5);
