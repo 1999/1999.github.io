@@ -20,12 +20,21 @@
 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jinklgkideaicpdgmomlckebafjfibjk">
 	<link rel="stylesheet" href="./css/vkpromo.css" media="all">
 
-	<script src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="https://chrome.google.com/webstore/widget/developer/scripts/widget.js"></script>
-
 	<!-- pAvatar -->
 	<link rel="pavatar" href="http://www.staypositive.ru/pic/pavatar.png">
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	
+	<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+		document.querySelector("button.green").onclick = function () {
+			try {
+				chrome.webstore.install();
+			} catch (ex) {
+				alert("VK Offline работает только на Chromium-based браузерах (Google Chrome, Яндекс.Браузер итд.)");
+			}
+		};
+	}, false);
+	</script>
 
 	<title>Приложение VK Offline для Google Chrome</title>
 </head>
