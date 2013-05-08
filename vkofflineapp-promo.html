@@ -33,7 +33,7 @@
 			
 			try {
 				self.innerHTML = "Подождите...";
-				chrome.webstore.install([on, off], function () {
+				chrome.webstore.install(undefined, function () {
 					self.innerHTML = "Установить сейчас";
 				}, function () {
 					self.innerHTML = "Установить сейчас";
