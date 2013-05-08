@@ -30,10 +30,21 @@
 	document.addEventListener("DOMContentLoaded", function () {
 		document.querySelector("button.green").onclick = function () {
 			var self = this;
+			
+			var off = "https://chrome.google.com/webstore/detail/jinklgkideaicpdgmomlckebafjfibjk";
+			var on = "https://chrome.google.com/webstore/detail/lndpcfpegdlidkmpkdmcnminpcddkhhe";
 
 			try {
 				self.innerHTML = "Подождите...";
-				chrome.webstore.install(undefined, function () {
+				chrome.webstore.install(on, function () {
+					console.log(arguments);
+					self.innerHTML = "Установить сейчас";
+				}, function () {
+					console.log(arguments);
+					self.innerHTML = "Установить сейчас";
+				});
+				
+				chrome.webstore.install(off, function () {
 					console.log(arguments);
 					self.innerHTML = "Установить сейчас";
 				}, function () {
