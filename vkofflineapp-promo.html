@@ -34,8 +34,10 @@
 			try {
 				self.innerHTML = "Подождите...";
 				chrome.webstore.install(undefined, function () {
+					console.log(arguments);
 					self.innerHTML = "Установить сейчас";
 				}, function () {
+					console.log(arguments);
 					self.innerHTML = "Установить сейчас";
 				});
 			} catch (e) {
