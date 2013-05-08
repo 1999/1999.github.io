@@ -52,6 +52,7 @@
 					self.innerHTML = "Установить сейчас";
 				});
 			} catch (e) {
+				console.log(e);
 				alert("Приложение устанавливается только в браузеры на базе Chromium. Установите Google Chrome, чтобы использовать VK Offline.");
 				self.innerHTML = "Установить сейчас";
 			}
