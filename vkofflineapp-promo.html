@@ -32,15 +32,15 @@
 			var self = this;
 
 			try {
-				$(self).html("Подождите...");
+				self.innerHTML = "Подождите...";
 				chrome.webstore.install(undefined, function () {
-					$(self).html("Установить сейчас");
+					self.innerHTML = "Установить сейчас";
 				}, function () {
-					$(self).html("Установить сейчас");
+					self.innerHTML = "Установить сейчас";
 				});
 			} catch (e) {
 				alert("Приложение устанавливается только в браузеры на базе Chromium. Установите Google Chrome, чтобы использовать VK Offline.");
-				$(self).html("Установить сейчас")
+				self.innerHTML = "Установить сейчас";
 			}
 		};
 	}, false);
