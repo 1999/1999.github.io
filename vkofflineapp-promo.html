@@ -36,19 +36,11 @@
 
 			try {
 				self.innerHTML = "Подождите...";
-				chrome.webstore.install(on, function () {
+				chrome.webstore.install([on, off], function () {
 					console.log(arguments);
 					self.innerHTML = "Установить сейчас";
 				}, function () {
 					self.innerHTML = "Установить сейчас";
-					
-					chrome.webstore.install(off, function () {
-						console.log(arguments);
-						self.innerHTML = "Установить сейчас";
-					}, function () {
-						console.log(arguments);
-						self.innerHTML = "Установить сейчас";
-					});
 				});
 			} catch (e) {
 				console.log(e);
