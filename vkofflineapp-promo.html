@@ -31,21 +31,16 @@
 		document.querySelector("button.green").onclick = function () {
 			var self = this;
 			
-			var off = "https://chrome.google.com/webstore/detail/jinklgkideaicpdgmomlckebafjfibjk";
-			var on = "https://chrome.google.com/webstore/detail/lndpcfpegdlidkmpkdmcnminpcddkhhe";
-
 			try {
 				self.innerHTML = "Подождите...";
 				chrome.webstore.install([on, off], function () {
-					console.log(arguments);
 					self.innerHTML = "Установить сейчас";
 				}, function () {
 					self.innerHTML = "Установить сейчас";
 				});
 			} catch (e) {
-				console.log(e);
 				alert("Приложение устанавливается только в браузеры на базе Chromium. Установите Google Chrome, чтобы использовать VK Offline.");
-				self.innerHTML = "Установить сейчас";
+				self.innerHTML = ":(";
 			}
 		};
 	}, false);
