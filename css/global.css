@@ -7,15 +7,16 @@ body {
 	font-smoothing: antialiased;
 }
 
-@media screen and (min-height: 1400px) {
-	body {
-		background-size: cover;
-	}
-}
-
+/* 2200x1383 vs 1500x945 */
 @media screen and (min-width: 1500px) {
 	body {
 		background: fixed url(../pic/bg-hires.jpg) no-repeat;
+	}
+}
+
+@media screen and (min-height: 945px) {
+	body {
+		background-size: cover;
 	}
 }
 
