@@ -7,6 +7,12 @@ body {
 	font-smoothing: antialiased;
 }
 
+@media screen and (min-height: 1400px) {
+	body {
+		background-size: cover;
+	}
+}
+
 @media screen and (min-width: 1500px) {
 	body {
 		background: fixed url(../pic/bg-hires.jpg) no-repeat;
