@@ -1,0 +1,102 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Language" content="ru">
+
+	<!-- Yandex.Webmaster --> 
+	<meta name="yandex-verification" content="57f17e7bf30ae302">
+	<meta name="google-site-verification" content="GVsiZ9qJDbvsgZUJhz6LHu7Yg39w96Fsc_Sz3vU2BA0">
+
+	<link rel="stylesheet" href="./css/reset.css" media="all">
+	<link rel="stylesheet" href="./css/global.css" media="all">
+	
+	<!-- OpenID --> 
+	<link rel="openid.server" href="http://openid.yandex.ru/server/">
+	<link rel="openid2.provider" href="http://openid.yandex.ru/server/">
+	<link rel="openid.delegate" href="http://openid.yandex.ru/dmitry-sorin/">
+	<link rel="openid2.local_id" href="http://openid.yandex.ru/dmitry-sorin/">
+
+	<!-- pAvatar -->
+	<link rel="pavatar" href="http://www.staypositive.ru/pic/pavatar.png">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+	<!-- yashare fix -->
+	<style type="text/css">
+	.b-share_theme_counter .b-share-btn__lj, .b-share_theme_counter .b-share-btn__lj:hover .b-share-icon {
+		background-color: #2B76B0 !important;
+		border-bottom-color: #2B76B0 !important;
+		border-top-color: #2B76B0 !important;
+	}
+
+	.b-share_theme_counter .b-share-icon_lj {
+		background-position: -2px -198px !important;
+	}
+
+	.lib {
+		margin: 24px 0 0;
+		font-weight: bold;
+	}
+	</style>
+
+	<title>Open Source</title>
+</head>
+<body>
+
+<div id="menu">
+	<div class="right"> 
+		<ul>
+			<li><a href="/">About</a></li>
+			<li><a href="/pokormikota" class="active">ПокормиКота</a></li>
+			<li><a href="/sigurros">Dauðalogn</a></li>
+			<li><a href="/vkofflineapp-promo">VK Offline</a></li>
+			<li><a href="/opensource">Open Source</a></li>
+		</ul> 
+	</div>
+	<div class="left"> 
+		<h1><a href="/">Dmitry Sorin</a></h1>
+		<h2><span>jsdev</span><span>post-hardcore</span><span>yandex</span></h2>
+	</div> 
+</div>
+
+<div id="content">
+	<h1>Open Source</h1>
+
+	<p>I'm not a huge open source fan as I could be. But still I made a couple of things which I am proud of and which I support. This is the list of the open source products which were made or forked and supported by me. Most of them are located on my <a href="https://github.com/1999">Github</a> and are written in Javascript.</p>
+
+	<p class="lib"><a href="https://github.com/1999/sklad">Sklad</a></p>
+	<p>This is an IndexedDB abstraction library. IndexedDB is HTML5 standard for a local database of records holding simple values and hierarchical objects. Sklad library allows you to build apps for modern browsers with IndexedDB in a simple and convenient way.It also has a nice documentation available on <a href="https://github.com/1999/sklad">Github</a> and on the <a href="http://1999.github.io/sklad">project page</a>.</p>
+
+	<p class="lib"><a href="https://npmjs.org/package/node-couchdb">node-couchdb</a></p>
+	<p>node.js package to interact with CouchDB using ETags and your own cache layer (memcached, fs, memory, etc). After monthes of catching errors when using memcached/memcache NPM libraries I decided that it would be easier to make some kind of <a href="https://github.com/1999/node-couchdb/tree/master/examples">caching API</a> for node-couchdb and it turned to be a good idea then. This library has a pretty simple API, tests and docs.</p>
+
+	<p class="lib"><a href="https://github.com/1999/vkoffline">VK Offline</a></p>
+	<p>Quiet popular legacy packaged app for Google Chrome which had been developing by me until April 2013. Unfortunately a bit complicated code because of supporting many chrome versions, speed of development and lack of testing. There's a <a href="/vkofflineapp-promo">good page</a> about its features written in Russian and a <a href="http://my-chrome.ru/2013/04/prilozhenie-vk-offline-istoriya-sozdaniya-i-perexod-v-open-source/">full explanation</a> of reasons which made me release it as an open source software.</p>
+
+	<p class="lib"><a href="https://github.com/1999/dom">DOM</a></p>
+	<p>DOM manipulation library with mixins in the prototype chains, working in modern browsers. A simple and yet powerful library for extending HTMLElements and NodeLists with a jQuery-familiar chainable API.</p>
+
+	<p class="lib"><a href="https://chrome.google.com/webstore/detail/control-freak/jgnchehlaggacipokckdlbdemfeohdhc">Control Freak</a></p>
+	<p>A maintained fork of Michael Mahemoff's extension which allows easy web page tweaks, similar to GreaseMonkey in spirit. In June 2013 Michael <a href="https://plus.google.com/106413090159067280619/posts/Z5b61S9h35y">transfered</a> the extension to me in Chrome Web Store bacause of the lack of time for developing, and it took about 2 weeks to add new features, turn to new asynchronous API and so on.</p>
+
+	<p class="lib"><a href="https://github.com/1999/couchdb-php">CouchDB for PHP</a></p>
+	<p>PHP package to interact with CouchDB using Memcached as a cache layer. It also has a nice API and docs which explain the necessity of a cache layer. Pretty simple and understandable code.</p>
+
+	<p class="lib"><a href="https://github.com/1999/tipsy">jQuery-free Tipsy</a></p>
+	<p>A fork of famous Tipsy library, written in Vanilla JS and working in modern browsers.</p>
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20919085-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>
