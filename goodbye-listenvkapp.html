@@ -24,7 +24,7 @@
 			var parts = part.split("=");
 			var key = parts.shift();
 
-			searchParts[key] = parts.join("=");
+			searchParts[key] = decodeURIComponent(parts.join("="));
 		});
 
 		if (!searchParts.id || !searchParts.ver)
