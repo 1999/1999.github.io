@@ -5,29 +5,76 @@
 	<title>:'(</title>
 
 		<style type="text/css">
-		html, body { height: 100%; margin: 0; padding: 0; }
-		body { background: url(http://img-fotki.yandex.ru/get/6406/40858464.56/0_6ab70_94ccb2ad_XXXL.jpg) 0 0 no-repeat; background-size: cover; }
-		p { margin: 48px 32px; font: 28px/42px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: url(http://img-fotki.yandex.ru/get/6406/40858464.56/0_6ab70_94ccb2ad_XXXL.jpg) 0 0 no-repeat;
+			background-size: cover;
+		}
+
+		div {
+			margin: 48px 32px;
+			width: 420px;
+			padding: 12px;
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.5);
+		}
+
+		div p {
+			font: 20px/32px "Helvetica Neue", Helvetica, Arial, sans-serif;
+			margin-top: 0;
+		}
+
+		label {
+			display: block;
+			font: 18px/28px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+
+		button {
+			font: 18px/28px "Helvetica Neue", Helvetica, Arial, sans-serif;
+			margin-top: 18px;
+			cursor: pointer;
+		}
 		</style>
 </head>
 <body>
 
-<p>Прощай, дружок!<br>Жаль, что тебе не понравилось это приложение :'(</p>
+<div>
+	<p>Прощай, дружок! Жаль, что тебе не понравилось это приложение. Может быть у тебя есть причины, по которым ты удаляешь приложение?</p>
+
+	<label><input type="checkbox" name="reason" value="noapps"> Я не пользуюсь приложениями в Chrome</label>
+	<label><input type="checkbox" name="reason" value="nosense"> Я не вижу смысла в этом приложении</label>
+	<label><input type="checkbox" name="reason" value="errors"> Приложение работает с ошибками</label>
+	<label><input type="checkbox" name="reason" value="friend"> Я не люблю, когда меня называют "дружок"</label>
+
+	<button type="button" id="sendreport">Отправить</button>
+</div>
 
 <script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-20919085-8']);
 
 	(function () {
-		var searchParts = {};
-		location.search.replace(/^\?/, "").split("&").forEach(function (part) {
-			var parts = part.split("=");
-			var key = parts.shift();
+		function makeSearchParts() {
+			var searchParts = {};
+			location.search.replace(/^\?/, "").split("&").forEach(function (part) {
+				var parts = part.split("=");
+				var key = parts.shift();
 
-			searchParts[key] = decodeURIComponent(parts.join("="));
-		});
+				searchParts[key] = decodeURIComponent(parts.join("="));
+			});
 
-		if (!searchParts.id || !searchParts.ver)
+			return (!searchParts.id || !searchParts.ver)
+				? null
+				: searchParts;
+		}
+
+		var searchParts = makeSearchParts();
+		if (!searchParts)
 			return;
 
 		_gaq.push(['_trackEvent', 'Lyfecycle', 'Uninstall', JSON.stringify(searchParts)]);
@@ -39,6 +86,22 @@
 
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(ga, s);
+
+		document.getElementById("sendreport").onclick = function () {
+			var reasons = [];
+			[].forEach.call(document.querySelectorAll("input[type='checkbox'][name='reason']:checked"), function (reason) {
+				reasons.push(reason.value);
+			});
+
+			if (!reasons.length)
+				return;
+
+			searchParts.reasons = reasons;
+			_gaq.push(['_trackEvent', 'Lyfecycle', 'Report', JSON.stringify(searchParts)]);
+
+			this.disabled = "disabled";
+			this.innerHTML = "Спасибо!";
+		};
 	})();
 </script>
 
