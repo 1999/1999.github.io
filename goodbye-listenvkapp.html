@@ -86,7 +86,7 @@
 
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(ga, s);
-
+		
 		document.getElementById("sendreport").onclick = function () {
 			var reasons = [];
 			[].forEach.call(document.querySelectorAll("input[type='checkbox'][name='reason']:checked"), function (reason) {
