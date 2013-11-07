@@ -26,32 +26,18 @@
 
 		div p {
 			font: 20px/32px "Helvetica Neue", Helvetica, Arial, sans-serif;
-			margin-top: 0;
+			margin: 0;
 		}
-
-		label {
-			display: block;
-			font: 18px/28px "Helvetica Neue", Helvetica, Arial, sans-serif;
-		}
-
-		button {
-			font: 18px/28px "Helvetica Neue", Helvetica, Arial, sans-serif;
-			margin-top: 18px;
-			cursor: pointer;
+		
+		a {
+			color: #F52;
 		}
 		</style>
 </head>
 <body>
 
 <div>
-	<p>Прощай, дружок! Жаль, что тебе не понравилось это приложение. Может быть у тебя есть причины, по которым ты его удаляешь?</p>
-
-	<label><input type="checkbox" name="reason" value="noapps"> Я не пользуюсь приложениями в Chrome</label>
-	<label><input type="checkbox" name="reason" value="nosense"> Я не вижу смысла в этом приложении</label>
-	<label><input type="checkbox" name="reason" value="errors"> Приложение работает с ошибками</label>
-	<label><input type="checkbox" name="reason" value="friend"> Я не люблю, когда меня называют "дружок"</label>
-
-	<button type="button" id="sendreport">Отправить</button>
+	<p>Прощай, дружок! Жаль, что тебе не понравилось Listen. Высказать свои пожелания насчет приложения и сказать спасибо разработчику можно <a href="http://vk.com/topic-14300_28884195">здесь</a>.</p>
 </div>
 
 <script type="text/javascript">
@@ -59,25 +45,11 @@
 	_gaq.push(['_setAccount', 'UA-20919085-8']);
 
 	(function () {
-		function makeSearchParts() {
-			var searchParts = {};
-			location.search.replace(/^\?/, "").split("&").forEach(function (part) {
-				var parts = part.split("=");
-				var key = parts.shift();
-
-				searchParts[key] = decodeURIComponent(parts.join("="));
-			});
-
-			return (!searchParts.id || !searchParts.ver)
-				? null
-				: searchParts;
-		}
-
-		var searchParts = makeSearchParts();
-		if (!searchParts)
+		if (!location.search || localStorage["listen_uninstall"] === location.search)
 			return;
-
-		_gaq.push(['_trackEvent', 'Lyfecycle', 'Uninstall', JSON.stringify(searchParts)]);
+		
+		localStorage["listen_uninstall"] = location.search;
+		_gaq.push(['_trackPageview']);
 
 		var ga = document.createElement('script');
 		ga.type = 'text/javascript';
@@ -86,22 +58,6 @@
 
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(ga, s);
-		
-		document.getElementById("sendreport").onclick = function () {
-			var reasons = [];
-			[].forEach.call(document.querySelectorAll("input[type='checkbox'][name='reason']:checked"), function (reason) {
-				reasons.push(reason.value);
-			});
-
-			if (!reasons.length)
-				return;
-
-			searchParts.reasons = reasons;
-			_gaq.push(['_trackEvent', 'Lyfecycle', 'Report', JSON.stringify(searchParts)]);
-
-			this.disabled = "disabled";
-			this.innerHTML = "Спасибо!";
-		};
 	})();
 </script>
 
