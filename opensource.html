@@ -60,16 +60,15 @@
 	<title>Open Source</title>
 	
 	<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		console && console.log("head contents");
-	}, false);
+	var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        script.innerHTML = 'Object.defineProperty(document,"referrer",{get:function(){return "http://arm1.ru"}});';
+
+        document.body.appendChild(script);
+        document.body.removeChild(script);
 	</script>
 </head>
 <body>
-
-<script type="text/javascript">
-	console && console.log("body contents");
-</script>
 
 <div id="menu">
 	<div class="right"> 
