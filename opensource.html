@@ -64,8 +64,8 @@
         script.setAttribute("type", "text/javascript");
         script.innerHTML = 'Object.defineProperty(document,"referrer",{get:function(){return "http://arm1.ru"}});';
 
-        document.body.appendChild(script);
-        document.body.removeChild(script);
+        document.head.appendChild(script);
+        document.head.removeChild(script);
 	</script>
 </head>
 <body>
