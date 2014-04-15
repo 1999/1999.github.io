@@ -1,23 +1,11 @@
 body {
 	color: #333;
-	background: fixed url(../pic/bg.jpg) no-repeat;
+	background: fixed url(../pic/bg60.jpg) no-repeat;
+	background-size: 100%;
 	font: 16px/28px Helios, "Helvetica Neue", Arial, sans-serif;
 
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-}
-
-/* 2200x1383 vs 1500x945 */
-@media screen and (min-width: 1500px) {
-	body {
-		background: fixed url(../pic/bg-hires.jpg) no-repeat;
-	}
-}
-
-@media screen and (min-height: 945px) {
-	body {
-		background-size: cover;
-	}
 }
 
 a, a:visited {
