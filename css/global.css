@@ -115,9 +115,9 @@ abbr { border-bottom: 1px dotted; }
 }
 
 #indexText {
-	margin-left: 530px;
+	margin-left: 550px;
 	padding: 18px;
 	box-sizing: border-box;
-	background: rgba(255, 255, 255, .5);
+	background: rgba(255, 255, 255, .6);
 	border-radius: 8px;
 }
