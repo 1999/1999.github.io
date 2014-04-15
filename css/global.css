@@ -1,7 +1,7 @@
 body {
 	color: #333;
 	background: fixed url(../pic/bg60.jpg) no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	font: 16px/28px Helios, "Helvetica Neue", Arial, sans-serif;
 
 	-webkit-font-smoothing: antialiased;
