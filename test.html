@@ -27,7 +27,7 @@ for (var i = 0; i < 1000; i++) {
 document.addEventListener('touchstart', function (evt) {
   window.foo = {
     x: evt.changedTouches[0].clientX,
-    y: evt.changedTouches[1].clientY
+    y: evt.changedTouches[0].clientY
   };
 }, false);
 
@@ -39,7 +39,7 @@ document.addEventListener('touchmove', function (evt) {
   
   window.foo = {
     x: evt.changedTouches[0].clientX,
-    y: evt.changedTouches[1].clientY
+    y: evt.changedTouches[0].clientY
   };
   
   console.log(diff);
