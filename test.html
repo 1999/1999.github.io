@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<div id="test"></div>
+
+<script>
+var test = document.getElementById('test');
+var text = 'foobar ';
+
+for (var i = 0; i < 100000; i++) {
+  test.innerHTML += text;
+}
+</script>
+
+</body>
+</html>
