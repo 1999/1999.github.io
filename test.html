@@ -11,6 +11,12 @@
       vertical-align: top;
       position: relative;
     }
+    
+    html, body{
+     max-width:100%;
+     max-height:100%;
+     overflow:hidden;
+}
   </style>
 </head>
 <body>
@@ -33,6 +39,8 @@ document.addEventListener('touchstart', function (evt) {
   
   test.style.left = 0;
   test.style.top = 0;
+  
+  evt.preventDefault();
 }, false);
 
 document.addEventListener('touchmove', function (evt) {
@@ -49,11 +57,11 @@ document.addEventListener('touchmove', function (evt) {
   test.style.left = parseInt(test.style.left, 10) - diff.x + 'px';
   test.style.top = parseInt(test.style.top, 10) - diff.y + 'px';
   
-  console.log(parseInt(test.style.left, 10) + diff.x + 'px')
+  evt.preventDefault();
 }, false);
 
 document.addEventListener('touchend', function () {
-  
+  evt.preventDefault();
 }, false);
 </script>
 
