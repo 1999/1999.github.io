@@ -23,6 +23,19 @@ var text = 'foobar ';
 for (var i = 0; i < 1000; i++) {
   test.innerHTML += text;
 }
+
+document.addEventListener('touchstart', function (evt) {
+  window.foo = evt;
+  console.log(evt);
+}, false);
+
+document.addEventListener('touchmove', function (evt) {
+  
+}, false);
+
+document.addEventListener('touchend', function () {
+  
+}, false);
 </script>
 
 </body>
