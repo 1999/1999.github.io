@@ -25,10 +25,10 @@ document.addEventListener('touchstart', function (evt) {
     x: evt.changedTouches[0].clientX,
     y: evt.changedTouches[0].clientY
   };
-  
+
   test.style.left = evt.changedTouches[0].clientY;
   test.style.top = evt.changedTouches[0].clientY;
-  
+
   evt.preventDefault();
 }, false);
 
@@ -37,15 +37,15 @@ document.addEventListener('touchmove', function (evt) {
     x: window.foo.x - evt.changedTouches[0].clientX,
     y: window.foo.y - evt.changedTouches[0].clientY
   };
-  
+
   window.foo = {
     x: evt.changedTouches[0].clientX,
     y: evt.changedTouches[0].clientY
   };
-  
+
   test.style.left = parseInt(test.style.left, 10) - diff.x + 'px';
   test.style.top = parseInt(test.style.top, 10) - diff.y + 'px';
-  
+
   evt.preventDefault();
 }, false);
 
