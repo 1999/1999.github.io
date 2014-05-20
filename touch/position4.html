@@ -44,8 +44,8 @@ document.addEventListener('touchmove', function (evt) {
 
   var timeDiff = Math.floor((Date.now() - window.foo.start) / 1000);
   if (timeDiff % 3 === 0) {
-    test.style.left = 0;
-    test.style.top = 0;
+    test.style.left = '100px';
+    test.style.top = '100px';
 
     test.style.position = 'fixed';
   } else {
