@@ -30,6 +30,9 @@ document.addEventListener('touchstart', function (evt) {
     x: evt.changedTouches[0].clientX,
     y: evt.changedTouches[0].clientY
   };
+  
+  test.style.left = 0;
+  test.style.top = 0;
 }, false);
 
 document.addEventListener('touchmove', function (evt) {
