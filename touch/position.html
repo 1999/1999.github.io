@@ -26,8 +26,8 @@ document.addEventListener('touchstart', function (evt) {
     y: evt.changedTouches[0].clientY
   };
 
-  test.style.left = evt.changedTouches[0].clientY;
-  test.style.top = evt.changedTouches[0].clientY;
+  test.style.left = evt.changedTouches[0].clientX - 70 + 'px';
+  test.style.top = evt.changedTouches[0].clientY - 70 + 'px';
 
   evt.preventDefault();
 }, false);
