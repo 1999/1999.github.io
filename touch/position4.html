@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    #test {
+      width: 140px;
+      height: 140px;
+      overflow: hidden;
+      background: red;
+      display: inline-block;
+      vertical-align: top;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<div id="test"></div>
+
+<script>
+var test = document.getElementById('test');
+
+document.addEventListener('touchstart', function (evt) {
+  window.foo = {
+    x: evt.changedTouches[0].clientX,
+    y: evt.changedTouches[0].clientY,
+    start: Date.now()
+  };
+
+  test.style.left = evt.changedTouches[0].clientX - 70 + 'px';
+  test.style.top = evt.changedTouches[0].clientY - 70 + 'px';
+
+  evt.preventDefault();
+}, false);
+
+document.addEventListener('touchmove', function (evt) {
+  var diff = {
+    x: window.foo.x - evt.changedTouches[0].clientX,
+    y: window.foo.y - evt.changedTouches[0].clientY
+  };
+
+  window.foo.x = evt.changedTouches[0].clientX;
+  window.foo.y = evt.changedTouches[0].clientY;
+
+  var timeDiff = Math.floor((Date.now() - window.foo.start) / 1000);
+  if (timeDiff % 3 === 0) {
+    test.style.left = 0;
+    test.style.top = 0;
+
+    test.style.position = 'fixed';
+  } else {
+    test.style.left = parseInt(test.style.left || 100, 10) - diff.x + 'px';
+    test.style.top = parseInt(test.style.top || 100, 10) - diff.y + 'px';
+
+    test.style.position = 'absolute';
+  }
+
+  evt.preventDefault();
+}, false);
+
+document.addEventListener('touchend', function (evt) {
+  evt.preventDefault();
+}, false);
+</script>
+
+</body>
+</html>
