@@ -9,6 +9,7 @@
       background: red;
       display: inline-block;
       vertical-align: top;
+      position: relative;
     }
   </style>
 </head>
@@ -42,7 +43,8 @@ document.addEventListener('touchmove', function (evt) {
     y: evt.changedTouches[0].clientY
   };
   
-  console.log(diff);
+  test.style.left = parseInt(test.style.left, 10) + diff.x + 'px';
+  test.style.top = parseInt(test.style.top, 10) + diff.y + 'px';
 }, false);
 
 document.addEventListener('touchend', function () {
