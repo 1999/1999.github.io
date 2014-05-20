@@ -25,12 +25,24 @@ for (var i = 0; i < 1000; i++) {
 }
 
 document.addEventListener('touchstart', function (evt) {
-  window.foo = evt;
-  console.log(evt);
+  window.foo = {
+    x: evt.changedTouches[0].clientX,
+    y: evt.changedTouches[1].clientY
+  };
 }, false);
 
 document.addEventListener('touchmove', function (evt) {
+  var diff = {
+    x: window.foo.x - evt.changedTouches[0].clientX,
+    y: window.foo.y - evt.changedTouches[0].clientY
+  };
   
+  window.foo = {
+    x: evt.changedTouches[0].clientX,
+    y: evt.changedTouches[1].clientY
+  };
+  
+  console.log(diff);
 }, false);
 
 document.addEventListener('touchend', function () {
