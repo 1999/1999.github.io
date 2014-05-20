@@ -45,6 +45,8 @@ document.addEventListener('touchmove', function (evt) {
   
   test.style.left = parseInt(test.style.left, 10) + diff.x + 'px';
   test.style.top = parseInt(test.style.top, 10) + diff.y + 'px';
+  
+  console.log(parseInt(test.style.left, 10) + diff.x + 'px')
 }, false);
 
 document.addEventListener('touchend', function () {
