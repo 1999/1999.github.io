@@ -19,11 +19,6 @@
 
 <script>
 var test = document.getElementById('test');
-var text = 'foobar ';
-
-for (var i = 0; i < 1000; i++) {
-  test.innerHTML += text;
-}
 
 document.addEventListener('touchstart', function (evt) {
   window.foo = {
@@ -31,8 +26,8 @@ document.addEventListener('touchstart', function (evt) {
     y: evt.changedTouches[0].clientY
   };
   
-  test.style.left = 0;
-  test.style.top = 0;
+  test.style.left = evt.changedTouches[0].clientY;
+  test.style.top = evt.changedTouches[0].clientY;
   
   evt.preventDefault();
 }, false);
