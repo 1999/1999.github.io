@@ -21,6 +21,7 @@ var state = /state=([^&]+)/.exec(document.location.hash);
 if (token) {
   alert('Token received: ' + token[1]);
   alert('Save token into hosting database...');
+  alert('Get yandex user data here: https://login.yandex.ru/info?format=json&oauth_token=' + token[1]);
   alert('Generate token for KP...');
 
   var retPath = decodeURIComponent(state[1]);
