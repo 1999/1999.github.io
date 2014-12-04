@@ -1,17 +1,17 @@
-<!DOCTYPE HTML> 
-<html> 
-<head> 
+<!DOCTYPE HTML>
+<html>
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Language" content="ru">
 
-	<!-- Yandex.Webmaster --> 
+	<!-- Yandex.Webmaster -->
 	<meta name="yandex-verification" content="57f17e7bf30ae302">
 	<meta name="google-site-verification" content="GVsiZ9qJDbvsgZUJhz6LHu7Yg39w96Fsc_Sz3vU2BA0">
 
 	<link rel="stylesheet" href="./css/reset.css" media="all">
 	<link rel="stylesheet" href="./css/global.css" media="all">
-	
-	<!-- OpenID --> 
+
+	<!-- OpenID -->
 	<link rel="openid.server" href="http://openid.yandex.ru/server/">
 	<link rel="openid2.provider" href="http://openid.yandex.ru/server/">
 	<link rel="openid.delegate" href="http://openid.yandex.ru/dmitry-sorin/">
@@ -25,12 +25,12 @@
 	<!-- pAvatar -->
 	<link rel="pavatar" href="http://www.staypositive.ru/pic/pavatar.png">
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-	
+
 	<script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function () {
 		document.querySelector("button.green").onclick = function () {
 			var self = this;
-			
+
 			try {
 				self.innerHTML = "Подождите...";
 				chrome.webstore.install(undefined, function () {
@@ -51,19 +51,19 @@
 <body>
 
 <div id="menu">
-	<div class="right"> 
+	<div class="right">
 		<ul>
 			<li><a href="/">About</a></li>
 			<li><a href="/pokormikota">ПокормиКота</a></li>
 			<li><a href="/sigurros">Dauðalogn</a></li>
 			<li><a class="active" href="/vkofflineapp-promo">VK Offline</a></li>
 			<li><a href="/opensource">Open Source</a></li>
-		</ul> 
+		</ul>
 	</div>
-	<div class="left"> 
+	<div class="left">
 		<h1><a href="/">Dmitry Sorin</a></h1>
 		<h2><span>jsdev</span><span>post-hardcore</span><span>yandex</span></h2>
-	</div> 
+	</div>
 </div>
 
 <!-- Put this script tag to the <head> of your page -->
@@ -75,7 +75,7 @@
 <div id="content">
 	<div id="promodata">
 		<div class="data">
-			<p class="description">VK Offline - это <b>приложение для Google Chrome</b>, которое объединяет легкость и простоту диалогов ВКонтакте с удобными и привычными функциями любого E-mail клиента и адресной книги. Приложение бесплатно и предоставляет доступ к вашим контактам и переписке даже при отсутствии интернета.</p>
+			<p class="description">VK Offline - это <b>e-mail клиент и адресная книга на основе ваших данных ВКонтакте</b>. Приложение бесплатно и предоставляет доступ к вашим контактам и переписке даже при отсутствии интернета. Устанавливается в Google Chrome из <a href="https://chrome.google.com/webstore/detail/jinklgkideaicpdgmomlckebafjfibjk">Chrome Web Store</a>.</p>
 			<div class="buttons">
 				<button type="button" class="green">Установить сейчас</button>
 
@@ -133,13 +133,6 @@
 				<img width="500" height="309" alt="" src="http://img-fotki.yandex.ru/get/6301/38295944.32/0_69c7b_f16056a2_orig">
 				<p>Все данные хранятся локально. Это означает, что контакты, метки и принятые сообщения никуда не посылаются, а хранятся в базе данных у вас на компьютере.</p>
 				<p>При установке приложение запрашивает у вас доступ к сайтам *.vk.com и *.userapi.com - через них приложение синхронизирует ваши данные.</p>
-			</div>
-		</div>
-		<div style="clear: both;">
-			<h1>Open Source</h1>
-			<div class="data">
-				<p>Приложение появилось в Chrome Web Store в августе 2011 года. Теперь, спустя полтора года я отдаю VK Offline в сообщество разработчиков на github как <b>opensource продукт</b>. Для пользователей это означает, что дальнейшее развитие приложения VK Offline будет продолжаться силами <b>сторонних разработчиков</b>. Если вы javascript-программист и хотите продолжить развитие этого проекта, то список улучшений вы можете посмотреть <a href="https://github.com/1999/vkoffline/issues?sort=created&state=open">здесь</a>.</p>
-				<p>Чтобы быть до конца честным - я вижу развитие VK Offline в качестве <u>не legacy</u> packaged app, но к сожалению для этого нужны или огромная куча времени, или прямое сотрудничество с ВКонтакте.</p>
 			</div>
 		</div>
 	</div>
