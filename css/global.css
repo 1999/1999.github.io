@@ -2,7 +2,7 @@ body {
 	color: #333;
 	background: fixed url(../pic/bg60.jpg) no-repeat;
 	background-size: cover;
-	font: 16px/28px Helios, "Helvetica Neue", Arial, sans-serif;
+	font: 1em/1.75em Helios, "Helvetica Neue", Arial, sans-serif;
 
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
@@ -44,51 +44,51 @@ abbr { border-bottom: 1px dotted; }
 	box-sizing: border-box;
 }
 
-#menu div.left {
+.site-title {
 	float: left;
 }
 
-#menu div.left h1 a {
-	font: bold 32px/48px Helios, "Helvetica Neue", Arial, sans-serif;
+.site-title h1 a {
+	font: bold 2em/48px Helios, "Helvetica Neue", Arial, sans-serif;
 	text-decoration: none;
 	color: #333;
 }
 
-#menu div.left h2 span {
+.site-title h2 span {
 	margin-right: 6px;
 	background: rgba(255, 255, 255, .65);
 	padding: 2px 4px;
 }
 
-#menu div.right ul {
+.site-menu ul {
 	list-style: none;
 	float: right;
 }
 
-#menu div.right ul li {
+.site-menu ul li {
 	display: inline;
 }
 
-#menu div.right ul li a {
-	font: bold 20px/60px Helios, "Helvetica Neue", Arial, sans-serif;
+.site-menu ul li a {
+	font: bold 1.25em/60px Helios, "Helvetica Neue", Arial, sans-serif;
 	margin: 0 2px;
 	padding: 4px 8px;
 	text-decoration: none;
 }
 
-#menu div.right ul li a.active {
+.site-menu ul li a.active {
 	border-bottom: 2px solid;
 }
 
-#menu div.right ul li a:hover {
+.site-menu ul li a:hover {
 	background: #ff5522;
 	color: white;
 }
 
 #content {
 	width: 1000px;
-	margin: 0 auto 24px;
-	padding: 24px;
+	margin: 0 auto 1.5em;
+	padding: 1.5em;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, .8);
 	border-radius: 12px;
@@ -99,7 +99,7 @@ abbr { border-bottom: 1px dotted; }
 }
 
 #content h1 {
-	font: 20px/32px Helios, "Helvetica Neue", Arial, sans-serif;
+	font: 1.25em/2em Helios, "Helvetica Neue", Arial, sans-serif;
 	color: #ff5522;
 	margin-bottom: 12px;
 }
@@ -120,4 +120,25 @@ abbr { border-bottom: 1px dotted; }
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, .6);
 	border-radius: 8px;
+}
+
+@media all and (max-width: 600px) {
+	#content {
+		border-radius: none;
+		width: auto;
+		margin: 0;
+	}
+
+	.site-title {
+		display: none;
+	}
+
+	.site-menu {
+		float: none;
+		text-align: center;
+	}
+
+	#indexText {
+		margin-left: 0;
+	}
 }
