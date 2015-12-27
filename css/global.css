@@ -91,7 +91,6 @@ abbr { border-bottom: 1px dotted; }
 	padding: 1.5em;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, .8);
-	border-radius: 12px;
 }
 
 @media screen and (min-width: 601px) {
@@ -121,12 +120,10 @@ abbr { border-bottom: 1px dotted; }
 	padding: 18px;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, .6);
-	border-radius: 8px;
 }
 
 @media screen and (max-width: 600px) {
 	#content {
-		border-radius: 0;
 		width: auto;
 		margin: 1em 0 0;
 	}
@@ -150,7 +147,6 @@ abbr { border-bottom: 1px dotted; }
 
 	#indexText {
 		margin-left: 0;
-		border-radius: 0;
 		background: none;
 	}
 }
