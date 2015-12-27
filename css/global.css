@@ -40,7 +40,7 @@ abbr { border-bottom: 1px dotted; }
 	width: 1000px;
 	height: 100px;
 	margin: 0 auto;
-	padding: 0 24px;
+	padding: 0 1.5em;
 	box-sizing: border-box;
 }
 
@@ -94,8 +94,10 @@ abbr { border-bottom: 1px dotted; }
 	border-radius: 12px;
 }
 
-#content.index {
-	background: none;
+@media screen and (min-width: 601px) {
+	#content.index {
+		background: none;
+	}
 }
 
 #content h1 {
@@ -122,23 +124,33 @@ abbr { border-bottom: 1px dotted; }
 	border-radius: 8px;
 }
 
-@media all and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 	#content {
-		border-radius: none;
+		border-radius: 0;
 		width: auto;
-		margin: 0;
+		margin: 1em 0 0;
+	}
+
+	#menu {
+		width: auto;
+		height: auto;
 	}
 
 	.site-title {
 		display: none;
 	}
 
-	.site-menu {
+	.site-menu ul {
 		float: none;
-		text-align: center;
+	}
+
+	.site-menu ul li a {
+		line-height: 2em;
 	}
 
 	#indexText {
 		margin-left: 0;
+		border-radius: 0;
+		background: none;
 	}
 }
