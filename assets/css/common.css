@@ -1,0 +1,112 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  background: #eee;
+  font: 1em/1.75em Helios, "Helvetica Neue", Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:link, a:visited {
+  color: #ff5522;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+}
+
+.wrapper-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.avatars {
+  text-align: center;
+}
+
+.avatars__avatar {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin: 0 8px;
+  padding: 2px;
+  vertical-align: top;
+}
+
+.about-me__ya {
+  font-size: 4em;
+  font-weight: bold;
+  line-height: 2em;
+  text-align: center;
+}
+
+.about-me__ya-chunk {
+  margin: 0 4px;
+}
+
+.about-me__ya-mobile-break {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .avatars {
+    margin-top: 1em;
+  }
+
+  .about-me__ya {
+    font-size: 3em;
+    line-height: 1em;
+    margin: 0.5em 0;
+  }
+
+  .about-me__ya-mobile-break {
+    display: inline-block;
+    vertical-align: top;
+    width: 12px;
+  }
+}
+
+.about-me__firstname {
+  color: #333;
+}
+
+.about-me__lastname {
+  color: #ff5522;
+}
+
+.about-me__description {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.find-me {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.find-me__source:link, .find-me__source:visited {
+  color: #ccc;
+  padding: 4px;
+  text-decoration: none;
+}
+
+.find-me__source:hover {
+  color: #333;
+  cursor: pointer;
+}
