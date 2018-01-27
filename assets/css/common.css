@@ -20,11 +20,32 @@ a:hover {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+.book {
+  margin: 1em 0;
+}
+
+.tg-links {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.tg-header {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
 .wrapper {
-  align-items: center;
   display: flex;
   flex-direction: column;
   padding: 0 2em;
+}
+
+.wrapper_centered {
+  align-items: center;
 }
 
 .wrapper-inner {
